@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Police vs Thief</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <h1>👮‍♂️ Police vs Thief</h1>
+  <div class="grid">
+    <div class="card">
+      <h2>Start a Lobby</h2>
+      <div class="row">
+        <input id="hostName" placeholder="Your name" />
+        <input id="rounds" type="number" placeholder="Rounds (e.g., 10)" />
+        <button id="createBtn" class="btn-primary">Create Lobby</button>
+      </div>
+      <div class="spacer"></div>
+      <h2>Join a Lobby</h2>
+      <div class="row">
+        <input id="joinCode" placeholder="Team code (e.g., AB12CD)" />
+        <input id="playerName" placeholder="Your name" />
+        <button id="joinBtn">Join</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Lobby</h2>
+      <div id="lobbyInfo" class="muted">No lobby yet.</div>
+      <div class="spacer"></div>
+      <div id="players"></div>
+      <div class="spacer"></div>
+      <div class="row">
+        <button id="startBtn" class="btn-primary" disabled>Start Round</button>
+        <button id="dismantleBtn" class="btn-ghost" style="display:none">Dismantle Lobby</button>
+        <span id="roleBadge" class="pill mono"></span>
+      </div>
+      <div class="spacer"></div>
+      <div id="policeAction" style="display:none">
+        <label>Guess the thief:</label>
+        <select id="guessSelect"></select>
+        <button id="guessBtn" class="btn-primary">Submit Guess</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Round Result</h2>
+      <div id="roundResult" class="muted">—</div>
+    </div>
+
+    <div class="card">
+      <h2>Scoreboard</h2>
+      <div id="scoreboard">—</div>
+    </div>
+
+    <div class="card">
+      <h2>History</h2>
+      <div id="history">—</div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/client.js"></script>
+</body>
+</html>
